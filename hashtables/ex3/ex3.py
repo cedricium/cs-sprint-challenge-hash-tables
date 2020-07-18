@@ -2,7 +2,18 @@ def intersection(arrays):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    num_arrays = len(arrays)
+    number_cache = {}
+    result = []
+
+    for arr in arrays:
+        for num in arr:
+            if num not in number_cache:
+                number_cache[num] = 1
+            else:
+                number_cache[num] += 1
+                if number_cache[num] == num_arrays:
+                    result.append(num)
 
     return result
 
